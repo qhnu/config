@@ -53,6 +53,7 @@ const extendsClone = [
 
 const rulesClone = {
   ...node.rules,
+  'react/forbid-dom-props': ['error', { forbid: ['className'] }],
   'react/jsx-sort-props': 'error',
   /** @see https://github.com/yannickcr/eslint-plugin-react/issues/2353 */
   'react/prop-types': 0,
