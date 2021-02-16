@@ -4,11 +4,10 @@
  */
 
 const base = {
-  testEnvironment: '',
+  moduleNameMapper: { '^@/(.+)': '<rootDir>/src/$1' },
   roots: ['<rootDir>/src'],
-  transform: {
-    '\\.([tj]sx?|[mc]js)$': 'babel-jest',
-  },
+  testEnvironment: '',
+  transform: { '\\.([tj]sx?|[mc]js)$': 'babel-jest' },
 }
 
 module.exports = {
