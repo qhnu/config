@@ -46,6 +46,7 @@ const node = {
     ],
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-explicit-any': 0,
   },
 }
 
