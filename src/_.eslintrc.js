@@ -15,7 +15,7 @@ const node = {
     project: './tsconfig.json',
     extraFileExtensions: ['.cjs', '.mjs'],
   },
-  plugins: ['es'],
+  plugins: ['es', 'simple-import-sort'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -25,8 +25,10 @@ const node = {
   rules: {
     // es
     'es/no-regexp-lookbehind-assertions': 'error',
+    // simple-import-sort
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
     // eslint
-    'sort-imports': 'error',
     'no-restricted-syntax': [
       'error',
       { selector: 'TSEnumDeclaration', message: "Don't declare enums" },
@@ -47,11 +49,7 @@ const node = {
   },
 }
 
-const extendsClone = [
-  ...node.extends,
-  'plugin:react/recommended',
-  'plugin:react-hooks/recommended',
-]
+const extendsClone = [...node.extends, 'plugin:react/recommended', 'plugin:react-hooks/recommended']
 
 const rulesClone = {
   ...node.rules,
