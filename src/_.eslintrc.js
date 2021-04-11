@@ -11,8 +11,11 @@ const node = {
     jest: true,
   },
   parser: '@typescript-eslint/parser',
-  parserOptions: { project: './tsconfig.json', extraFileExtensions: ['.cjs'] },
-  plugins: ['es', 'import'],
+  parserOptions: {
+    project: './tsconfig.json',
+    extraFileExtensions: ['.cjs', '.mjs'],
+  },
+  plugins: ['es'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -22,9 +25,8 @@ const node = {
   rules: {
     // es
     'es/no-regexp-lookbehind-assertions': 'error',
-    // import
-    'import/order': ['error', { alphabetize: { order: 'asc' } }],
     // eslint
+    'sort-imports': 'error',
     'no-restricted-syntax': [
       'error',
       { selector: 'TSEnumDeclaration', message: "Don't declare enums" },
@@ -58,7 +60,7 @@ const rulesClone = {
   'react/prop-types': 0,
   'react-hooks/exhaustive-deps': [
     'error',
-    { additionalHooks: 'useRecoilCallback' },
+    { additionalHooks: '(useRecoilCallback)' }, // 値は正規表現
   ],
 }
 
