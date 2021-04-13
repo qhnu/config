@@ -5,7 +5,7 @@
 
 module.exports = {
   distDir: 'dist/build',
-  reactStrictMode: true,
+  reactStrictMode: false,
   /** @param {import('webpack').Configuration} config */
   webpack(config, { dev, isServer }) {
     return config
